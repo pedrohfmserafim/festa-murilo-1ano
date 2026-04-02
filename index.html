@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>1 ano do Murilo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: #f5f0e8;
+      font-family: 'Lato', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .animal {
+      position: fixed;
+      font-size: 2.5rem;
+      opacity: 0.15;
+      pointer-events: none;
+      animation: float 6s ease-in-out infinite;
+    }
+    .animal:nth-child(1)  { top: 5%;  left: 2%;  font-size: 3rem;  animation-delay: 0s; }
+    .animal:nth-child(2)  { top: 15%; right: 3%; font-size: 2rem;  animation-delay: 1s; }
+    .animal:nth-child(3)  { top: 40%; left: 1%;  font-size: 2.5rem;animation-delay: 2s; }
+    .animal:nth-child(4)  { top: 60%; right: 2%; font-size: 3rem;  animation-delay: 0.5s;}
+    .animal:nth-child(5)  { top: 80%; left: 3%;  font-size: 2rem;  animation-delay: 1.5s;}
+    .animal:nth-child(6)  { top: 85%; right: 4%; font-size: 2.5rem;animation-delay: 2.5s;}
+    .animal:nth-child(7)  { top: 25%; left: 5%;  font-size: 2rem;  animation-delay: 3s; }
+    .animal:nth-child(8)  { top: 70%; left: 2%;  font-size: 2.5rem;animation-delay: 0.8s;}
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(-3deg); }
+      50%       { transform: translateY(-15px) rotate(3deg); }
+    }
+
+    .container {
+      max-width: 560px;
+      margin: 0 auto;
+      padding: 40px 24px 60px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .emoji-topo {
+      font-size: 3.5rem;
+      display: block;
+      margin-bottom: 8px;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .frase-principal {
+      font-family: 'Caveat', cursive;
+      font-size: 3.2rem;
+      color: #3a2a1a;
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+
+    .card-info {
+      background: rgba(255,255,255,0.75);
+      border: 2px solid #d4b896;
+      border-radius: 20px;
+      padding: 24px 20px;
+      text-align: center;
+      margin-bottom: 28px;
+      backdrop-filter: blur(4px);
+    }
+
+    .card-info h2 {
+      font-family: 'Caveat', cursive;
+      font-size: 2rem;
+      color: #5c3d1e;
+      margin-bottom: 12px;
+    }
+
+    .info-line {
+      font-size: 1rem;
+      color: #6b4c2a;
+      margin: 6px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .info-line span.icon { font-size: 1.2rem; }
+
+    .divider {
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(to right, #c8956c, #e8c99a);
+      margin: 12px auto;
+      border-radius: 2px;
+    }
+
+    .form-card {
+      background: rgba(255,255,255,0.85);
+      border: 2px solid #d4b896;
+      border-radius: 20px;
+      padding: 28px 24px;
+      backdrop-filter: blur(4px);
+    }
+
+    .form-card h3 {
+      font-family: 'Caveat', cursive;
+      font-size: 1.8rem;
+      color: #5c3d1e;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .form-intro {
+      font-size: 0.9rem;
+      color: #7a5230;
+      text-align: center;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .field-group {
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #7a5230;
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid #d4b896;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-family: 'Lato', sans-serif;
+      background: #fffdf9;
+      color: #3a2a1a;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #c8956c;
+      box-shadow: 0 0 0 3px rgba(200,149,108,0.15);
+    }
+
+    /* bloco de convidado */
+    .convidado-card {
+      background: #fffdf9;
+      border: 1.5px solid #d4b896;
+      border-radius: 14px;
+      padding: 14px 12px;
+      margin-bottom: 12px;
+      position: relative;
+    }
+
+    .convidado-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .convidado-titulo {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #7a5230;
+    }
+
+    .convidado-sub {
+      font-size: 0.75rem;
+      color: #a57a52;
+    }
+
+    .btn-remover {
+      border: none;
+      background: transparent;
+      color: #c95b4a;
+      font-size: 0.8rem;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    .btn-remover[disabled] {
+      opacity: 0.4;
+      cursor: default;
+      text-decoration: none;
+    }
+
+    .convidado-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 10px;
+    }
+
+    .convidado-grid-3 {
+      display: grid;
+      grid-template-columns: 1.2fr 0.9fr 0.9fr;
+      gap: 10px;
+    }
+
+    .btn-add-convidado {
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1.5px dashed #c8956c;
+      background: rgba(255,253,249,0.8);
+      color: #8a5d35;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .btn-add-convidado span.icon {
+      font-size: 1.1rem;
+    }
+
+    .btn-confirmar {
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, #c8956c, #a0683a);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-family: 'Caveat', cursive;
+      font-weight: 700;
+      cursor: pointer;
+      letter-spacing: 0.5px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      margin-top: 8px;
+    }
+
+    .btn-confirmar:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(160,104,58,0.35);
+    }
+
+    .btn-confirmar:active { transform: translateY(0); }
+
+    .success-screen {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .success-screen.show { display: block; }
+    .form-card.hide { display: none; }
+
+    .success-emoji { font-size: 4rem; display: block; margin-bottom: 16px; }
+
+    .success-screen h3 {
+      font-family: 'Caveat', cursive;
+      font-size: 2.2rem;
+      color: #5c3d1e;
+      margin-bottom: 10px;
+    }
+
+    .success-screen p {
+      color: #7a5230;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 28px;
+      font-size: 0.8rem;
+      color: #b09070;
+    }
+
+    @media (max-width: 480px) {
+      .frase-principal { font-size: 2.6rem; }
+      .convidado-grid, .convidado-grid-3 {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Animais decorativos de fundo -->
+  <div class="animal">🐑</div>
+  <div class="animal">🐓</div>
+  <div class="animal">🐴</div>
+  <div class="animal">🦆</div>
+  <div class="animal">🐇</div>
+  <div class="animal">🐄</div>
+  <div class="animal">🌳</div>
+  <div class="animal">🐣</div>
+
+  <div class="container">
+
+    <!-- Header -->
+    <div class="header">
+      <span class="emoji-topo">🐄🌻🐔</span>
+      <div class="frase-principal">Vem comemorar<br>comigo, vem!</div>
+    </div>
+
+    <!-- Informações da festa -->
+    <div class="card-info">
+      <h2>🎂 1 ano do Murilo</h2>
+      <div class="divider"></div>
+      <div class="info-line">
+        <span class="icon">📅</span>
+        <span>09 de maio | sábado | 16h</span>
+      </div>
+      <div class="info-line">
+        <span class="icon">📍</span>
+        <span>Av. Getúlio Dorneles Vargas, 2268<br>Jardim Califórnia — Jacareí</span>
+      </div>
+    </div>
+
+    <!-- Formulário -->
+    <div class="form-card" id="formCard">
+      <h3>🌾 Confirme sua presença</h3>
+      <p class="form-intro">
+        Para liberar a entrada na portaria, precisamos do nome completo, CPF e telefone 
+        de todos os convidados do seu grupo.
+      </p>
+
+      <div class="field-group">
+        <label>Convidados</label>
+        <div id="listaConvidados"></div>
+        <button type="button" class="btn-add-convidado" onclick="adicionarConvidado()">
+          <span class="icon">➕</span>
+          <span>Adicionar mais um convidado</span>
+        </button>
+      </div>
+
+      <button class="btn-confirmar" onclick="confirmar()">
+        Confirmar presença do grupo
+      </button>
+    </div>
+
+    <!-- Tela de sucesso -->
+    <div class="form-card success-screen" id="successScreen">
+      <span class="success-emoji">🎉🐄🎉</span>
+      <h3>Presença confirmada!</h3>
+      <p>
+        Obrigado pela confirmação!<br>
+        Os nomes informados já estarão autorizados na portaria.<br><br>
+        📅 09 de maio | sábado | 16h<br>
+        📍 Av. Getúlio Dorneles Vargas, 2268 — Jacareí
+      </p>
+    </div>
+
+    <div class="footer">
+      🌻 Festa do Murilo · 1 aninho · Tema Fazendinha 🌻
+    </div>
+
+  </div>
+
+  <script>
+    let contadorConvidados = 0;
+
+    function criarCardConvidado(id, principal = false) {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'convidado-card';
+      wrapper.setAttribute('data-id', id);
+
+      const header = document.createElement('div');
+      header.className = 'convidado-header';
+
+      const titulo = document.createElement('div');
+      titulo.className = 'convidado-titulo';
+      titulo.textContent = principal ? 'Você (convidado principal)' : 'Convidado extra';
+
+      const sub = document.createElement('div');
+      sub.className = 'convidado-sub';
+      sub.textContent = 'Nome completo, CPF e telefone';
+
+      const grupoTitulo = document.createElement('div');
+      grupoTitulo.appendChild(titulo);
+      grupoTitulo.appendChild(sub);
+
+      const btnRemover = document.createElement('button');
+      btnRemover.type = 'button';
+      btnRemover.className = 'btn-remover';
+      btnRemover.textContent = 'remover';
+      btnRemover.onclick = () => removerConvidado(id);
+
+      if (principal) {
+        btnRemover.disabled = true;
+      }
+
+      header.appendChild(grupoTitulo);
+      header.appendChild(btnRemover);
+
+      // Campos: nome, cpf, telefone
+      const grid = document.createElement('div');
+      grid.className = 'convidado-grid-3';
+
+      const campoNome = document.createElement('div');
+      campoNome.className = 'field-group';
+      const labelNome = document.createElement('label');
+      labelNome.textContent = 'Nome completo';
+      const inputNome = document.createElement('input');
+      inputNome.type = 'text';
+      inputNome.placeholder = 'Ex: Ana Souza';
+      inputNome.name = `convidado_nome_${id}`;
+      campoNome.appendChild(labelNome);
+      campoNome.appendChild(inputNome);
+
+      const campoCpf = document.createElement('div');
+      campoCpf.className = 'field-group';
+      const labelCpf = document.createElement('label');
+      labelCpf.textContent = 'CPF';
+      const inputCpf = document.createElement('input');
+      inputCpf.type = 'text';
+      inputCpf.placeholder = '000.000.000-00';
+      inputCpf.name = `convidado_cpf_${id}`;
+      campoCpf.appendChild(labelCpf);
+      campoCpf.appendChild(inputCpf);
+
+      const campoTel = document.createElement('div');
+      campoTel.className = 'field-group';
+      const labelTel = document.createElement('label');
+      labelTel.textContent = 'Telefone';
+      const inputTel = document.createElement('input');
+      inputTel.type = 'tel';
+      inputTel.placeholder = '(12) 99999-9999';
+      inputTel.name = `convidado_tel_${id}`;
+      campoTel.appendChild(labelTel);
+      campoTel.appendChild(inputTel);
+
+      grid.appendChild(campoNome);
+      grid.appendChild(campoCpf);
+      grid.appendChild(campoTel);
+
+      wrapper.appendChild(header);
+      wrapper.appendChild(grid);
+
+      return wrapper;
+    }
+
+    function inicializar() {
+      adicionarConvidado(true);
+    }
+
+    function adicionarConvidado(principal = false) {
+      contadorConvidados++;
+      const id = contadorConvidados;
+      const lista = document.getElementById('listaConvidados');
+      const card = criarCardConvidado(id, principal);
+      lista.appendChild(card);
+    }
+
+    function removerConvidado(id) {
+      const lista = document.getElementById('listaConvidados');
+      const cards = lista.querySelectorAll('.convidado-card');
+      if (cards.length <= 1) {
+        alert('É necessário ter pelo menos um convidado para confirmar.');
+        return;
+      }
+      const alvo = lista.querySelector(`.convidado-card[data-id="${id}"]`);
+      if (alvo) {
+        lista.removeChild(alvo);
+      }
+    }
+
+    function confirmar() {
+      const lista = document.getElementById('listaConvidados');
+      const cards = lista.querySelectorAll('.convidado-card');
+
+      if (cards.length === 0) {
+        alert('Adicione pelo menos um convidado.');
+        return;
+      }
+
+      const convidados = [];
+      for (const card of cards) {
+        const id = card.getAttribute('data-id');
+        const nome = card.querySelector(`input[name="convidado_nome_${id}"]`).value.trim();
+        const cpf = card.querySelector(`input[name="convidado_cpf_${id}"]`).value.trim();
+        const tel = card.querySelector(`input[name="convidado_tel_${id}"]`).value.trim();
+
+        if (!nome || !cpf || !tel) {
+          alert('Por favor, preencha nome, CPF e telefone de todos os convidados.');
+          return;
+        }
+
+        convidados.push({ nome, cpf, telefone: tel });
+      }
+
+      // Aqui você pode integrar com API ou Google Sheets no futuro
+      console.log('Confirmação de presença:', convidados);
+
+      document.getElementById('formCard').classList.add('hide');
+      document.getElementById('successScreen').classList.add('show');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    document.addEventListener('DOMContentLoaded', inicializar);
+  </script>
+
+</body>
+</html>
