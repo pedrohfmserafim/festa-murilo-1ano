@@ -16,7 +16,6 @@
       position: relative;
     }
 
-    /* Cena fazendinha no fundo */
     .farm-scene {
       position: fixed;
       inset: 0;
@@ -240,6 +239,12 @@
       box-shadow: 0 6px 20px rgba(160,104,58,0.35);
     }
 
+    .btn-confirmar:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
     .success-screen {
       display: none;
       text-align: center;
@@ -290,28 +295,25 @@
 
     <!-- Cerca -->
     <g fill="#8a6a40" stroke="#6b4c2a" stroke-width="1.2">
-      <!-- mourões -->
-      <!-- espaçados por quase toda a tela -->
-      <rect x="40" y="720" width="10" height="55" rx="2"/>
-      <rect x="140" y="720" width="10" height="55" rx="2"/>
-      <rect x="240" y="720" width="10" height="55" rx="2"/>
-      <rect x="340" y="720" width="10" height="55" rx="2"/>
-      <rect x="440" y="720" width="10" height="55" rx="2"/>
-      <rect x="540" y="720" width="10" height="55" rx="2"/>
-      <rect x="640" y="720" width="10" height="55" rx="2"/>
-      <rect x="740" y="720" width="10" height="55" rx="2"/>
-      <rect x="840" y="720" width="10" height="55" rx="2"/>
-      <rect x="940" y="720" width="10" height="55" rx="2"/>
+      <rect x="40"   y="720" width="10" height="55" rx="2"/>
+      <rect x="140"  y="720" width="10" height="55" rx="2"/>
+      <rect x="240"  y="720" width="10" height="55" rx="2"/>
+      <rect x="340"  y="720" width="10" height="55" rx="2"/>
+      <rect x="440"  y="720" width="10" height="55" rx="2"/>
+      <rect x="540"  y="720" width="10" height="55" rx="2"/>
+      <rect x="640"  y="720" width="10" height="55" rx="2"/>
+      <rect x="740"  y="720" width="10" height="55" rx="2"/>
+      <rect x="840"  y="720" width="10" height="55" rx="2"/>
+      <rect x="940"  y="720" width="10" height="55" rx="2"/>
       <rect x="1040" y="720" width="10" height="55" rx="2"/>
       <rect x="1140" y="720" width="10" height="55" rx="2"/>
       <rect x="1240" y="720" width="10" height="55" rx="2"/>
       <rect x="1340" y="720" width="10" height="55" rx="2"/>
-      <!-- travessas -->
-      <rect x="30" y="730" width="1380" height="6" rx="3"/>
-      <rect x="30" y="750" width="1380" height="6" rx="3"/>
+      <rect x="30"  y="730" width="1380" height="6" rx="3"/>
+      <rect x="30"  y="750" width="1380" height="6" rx="3"/>
     </g>
 
-    <!-- Celeiro à direita -->
+    <!-- Celeiro -->
     <g transform="translate(1010, 540)">
       <defs>
         <linearGradient id="barnRed" x1="0" y1="0" x2="0" y2="1">
@@ -322,28 +324,19 @@
       <rect x="0" y="80" width="260" height="190" fill="url(#barnRed)" rx="2"/>
       <polygon points="130,5 270,80 -10,80" fill="#7b241c"/>
       <polygon points="130,10 262,78 -2,78" fill="#c0392b" opacity="0.35"/>
-
-      <!-- porta -->
       <rect x="95" y="160" width="70" height="100" rx="4" fill="#5d2e0c"/>
       <path d="M130,160 A35,35 0 0,1 165,160" fill="#4a2508"/>
       <line x1="130" y1="160" x2="130" y2="260" stroke="#4a2508" stroke-width="2"/>
-      <line x1="95" y1="210" x2="165" y2="210" stroke="#4a2508" stroke-width="2"/>
-
-      <!-- janelas -->
-      <rect x="20" y="110" width="55" height="42" rx="3" fill="#5d2e0c"/>
+      <line x1="95"  y1="210" x2="165" y2="210" stroke="#4a2508" stroke-width="2"/>
+      <rect x="20"  y="110" width="55" height="42" rx="3" fill="#5d2e0c"/>
       <line x1="47.5" y1="110" x2="47.5" y2="152" stroke="#4a2508" stroke-width="1.5"/>
-      <line x1="20" y1="131" x2="75" y2="131" stroke="#4a2508" stroke-width="1.5"/>
-
+      <line x1="20"   y1="131" x2="75"   y2="131" stroke="#4a2508" stroke-width="1.5"/>
       <rect x="185" y="110" width="55" height="42" rx="3" fill="#5d2e0c"/>
       <line x1="212.5" y1="110" x2="212.5" y2="152" stroke="#4a2508" stroke-width="1.5"/>
-      <line x1="185" y1="131" x2="240" y2="131" stroke="#4a2508" stroke-width="1.5"/>
-
-      <!-- “estrela” -->
+      <line x1="185"   y1="131" x2="240"   y2="131" stroke="#4a2508" stroke-width="1.5"/>
       <circle cx="130" cy="50" r="12" fill="#f9d94e" opacity="0.65"/>
-
-      <!-- chaminé -->
       <rect x="185" y="-18" width="22" height="40" fill="#7b241c"/>
-      <rect x="180" y="-24" width="32" height="8" fill="#6e1f17"/>
+      <rect x="180" y="-24" width="32" height="8"  fill="#6e1f17"/>
     </g>
 
     <!-- Árvore à esquerda -->
@@ -353,12 +346,12 @@
       <circle cx="14" cy="118" r="38" fill="#4a9020"/>
       <circle cx="64" cy="118" r="38" fill="#4a9020"/>
       <circle cx="39" cy="70"  r="40" fill="#6aba40"/>
-      <circle cx="25" cy="98"  r="6" fill="#e74c3c"/>
-      <circle cx="55" cy="95"  r="6" fill="#e74c3c"/>
-      <circle cx="40" cy="118" r="6" fill="#c0392b"/>
+      <circle cx="25" cy="98"  r="6"  fill="#e74c3c"/>
+      <circle cx="55" cy="95"  r="6"  fill="#e74c3c"/>
+      <circle cx="40" cy="118" r="6"  fill="#c0392b"/>
     </g>
 
-    <!-- Girassol perto do celeiro -->
+    <!-- Girassol -->
     <g transform="translate(1180, 705)">
       <rect x="8" y="30" width="6" height="70" rx="2" fill="#5aaa30"/>
       <g fill="#f9d94e">
@@ -374,21 +367,21 @@
       <circle cx="11" cy="22" r="8" fill="#8B4513"/>
     </g>
 
-    <!-- Vaca perto da cerca -->
+    <!-- Vaca -->
     <g transform="translate(900, 700)" opacity="0.9">
       <ellipse cx="45" cy="40" rx="38" ry="26" fill="#f5f5f5"/>
       <ellipse cx="35" cy="35" rx="12" ry="9"  fill="#5d4037" opacity="0.7"/>
       <ellipse cx="55" cy="48" rx="9"  ry="7"  fill="#5d4037" opacity="0.7"/>
       <ellipse cx="80" cy="28" rx="16" ry="14" fill="#f5f5f5"/>
-      <ellipse cx="88" cy="34" rx="9" ry="7" fill="#f8bbd0"/>
+      <ellipse cx="88" cy="34" rx="9"  ry="7"  fill="#f8bbd0"/>
       <circle cx="86" cy="35" r="2" fill="#c2185b" opacity="0.6"/>
       <circle cx="90" cy="35" r="2" fill="#c2185b" opacity="0.6"/>
       <circle cx="79" cy="24" r="3" fill="#2c3e50"/>
       <circle cx="80" cy="23" r="1" fill="white"/>
       <ellipse cx="68" cy="18" rx="6" ry="4" fill="#f5f5f5" transform="rotate(-20 68 18)"/>
       <ellipse cx="88" cy="16" rx="5" ry="4" fill="#f5f5f5" transform="rotate(20 88 16)"/>
-      <path d="M68,14 Q62,4 66,2" stroke="#8b6914" stroke-width="2" fill="none"/>
-      <path d="M88,13 Q94,3 90,1" stroke="#8b6914" stroke-width="2" fill="none"/>
+      <path d="M68,14 Q62,4 66,2"  stroke="#8b6914" stroke-width="2" fill="none"/>
+      <path d="M88,13 Q94,3 90,1"  stroke="#8b6914" stroke-width="2" fill="none"/>
       <rect x="15" y="62" width="10" height="28" rx="3" fill="#f0f0f0"/>
       <rect x="32" y="62" width="10" height="28" rx="3" fill="#f0f0f0"/>
       <rect x="55" y="62" width="10" height="28" rx="3" fill="#f0f0f0"/>
@@ -400,8 +393,8 @@
     <g transform="translate(420, 725)" opacity="0.9">
       <ellipse cx="22" cy="22" rx="18" ry="14" fill="#f5f5dc"/>
       <circle cx="38" cy="12" r="10" fill="#f5f5dc"/>
-      <ellipse cx="38" cy="4" rx="4" ry="5" fill="#e74c3c"/>
-      <ellipse cx="43" cy="6" rx="3" ry="4" fill="#e74c3c"/>
+      <ellipse cx="38" cy="4"  rx="4" ry="5"  fill="#e74c3c"/>
+      <ellipse cx="43" cy="6"  rx="3" ry="4"  fill="#e74c3c"/>
       <polygon points="47,13 53,12 47,15" fill="#f39c12"/>
       <circle cx="41" cy="11" r="2" fill="#2c3e50"/>
       <ellipse cx="18" cy="20" rx="10" ry="7" fill="#e8e0c8" transform="rotate(-15 18 20)"/>
@@ -427,6 +420,7 @@
   </svg>
 </div>
 
+<!-- Conteúdo -->
 <div class="container">
 
   <div class="header">
@@ -462,7 +456,7 @@
       </button>
     </div>
 
-    <button class="btn-confirmar" onclick="confirmar()">
+    <button class="btn-confirmar" id="btnConfirmar" onclick="confirmar()">
       🐄 Confirmar presença do grupo
     </button>
   </div>
@@ -486,6 +480,8 @@
 
 <script>
   let contadorConvidados = 0;
+
+  const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbx-NNFTQWtwLSzxWqZMfFba7M4YD7rOdB2ArF1s8IkAMwc3Qas2DmU5mbyMOWaudv--Iw/exec';
 
   function criarCardConvidado(id, principal = false) {
     const wrapper = document.createElement('div');
@@ -519,9 +515,9 @@
     grid.className = 'convidado-grid-3';
 
     const campos = [
-      { label: 'Nome completo', type: 'text',  placeholder: 'Ex: Ana Souza',   sufixo: 'nome' },
-      { label: 'CPF',           type: 'text',  placeholder: '000.000.000-00', sufixo: 'cpf'  },
-      { label: 'Telefone',      type: 'tel',   placeholder: '(12) 99999-9999',sufixo: 'tel'  },
+      { label: 'Nome completo', type: 'text', placeholder: 'Ex: Ana Souza',    sufixo: 'nome' },
+      { label: 'CPF',           type: 'text', placeholder: '000.000.000-00',   sufixo: 'cpf'  },
+      { label: 'Telefone',      type: 'tel',  placeholder: '(12) 99999-9999',  sufixo: 'tel'  },
     ];
 
     campos.forEach(({ label, type, placeholder, sufixo }) => {
@@ -559,10 +555,13 @@
     if (alvo) lista.removeChild(alvo);
   }
 
-  function confirmar() {
+  async function confirmar() {
     const lista = document.getElementById('listaConvidados');
     const cards = lista.querySelectorAll('.convidado-card');
-    if (!cards.length) { alert('Adicione pelo menos um convidado.'); return; }
+    if (!cards.length) {
+      alert('Adicione pelo menos um convidado.');
+      return;
+    }
 
     const convidados = [];
     for (const card of cards) {
@@ -577,11 +576,31 @@
       convidados.push({ nome, cpf, telefone: tel });
     }
 
-    console.log('Confirmações:', convidados);
+    const btn = document.getElementById('btnConfirmar');
+    btn.disabled = true;
+    btn.textContent = '⏳ Enviando...';
 
-    document.getElementById('formCard').classList.add('hide');
-    document.getElementById('successScreen').classList.add('show');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    try {
+      await fetch(WEB_APP_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          grupo: Date.now(),
+          convidados
+        })
+      });
+
+      document.getElementById('formCard').classList.add('hide');
+      document.getElementById('successScreen').classList.add('show');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    } catch (err) {
+      console.error('Erro ao enviar:', err);
+      alert('Houve um problema ao enviar sua confirmação. Tente novamente em alguns minutos.');
+      btn.disabled = false;
+      btn.textContent = '🐄 Confirmar presença do grupo';
+    }
   }
 
   document.addEventListener('DOMContentLoaded', () => adicionarConvidado(true));
